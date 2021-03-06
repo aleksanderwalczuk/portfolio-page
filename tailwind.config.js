@@ -2,6 +2,12 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    colors: {
+      current: '#111111',
+      gray: {
+        DEFAULT: '#f2f2f2'
+      }
+    },
     extend: {
       fontSize: {
         '5xl': ['3.5rem', {lineHeight: '1.143'}],

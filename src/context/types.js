@@ -1,0 +1,1 @@
+export const HOVER_MESSAGE = 'HOVER_MESSAGE';

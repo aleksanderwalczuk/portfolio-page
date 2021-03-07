@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import { ROUTE_CODE, ROUTE_ROOT } from "./routes";
+import Blog from "./pages/Blog";
+import { GraphQLClient, ClientContext } from "graphql-hooks";
+import HoverState from "./context/HoverContext/HoverState";
+
+const client = new GraphQLClient({
+  url: "https://graphql.datocms.com/",
+  headers: {
+    Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ClientContext.Provider value={client}>
+      <HoverState>
+        <Router>
+          <div className="bg-gray h-screen text-base text-current">
+            <Navbar />
+            <Switch>
+              <Route exact path={ROUTE_ROOT}>
+                <Home />
+              </Route>
+              <Route path={ROUTE_CODE}>
+                <Blog />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </HoverState>
+    </ClientContext.Provider>
   );
 }
 

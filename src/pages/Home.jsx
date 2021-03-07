@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
+import HoverContext from "../context/HoverContext/hoverContext";
 import { ROUTE_CODE } from "../routes";
 
 export default function Home() {
   const [messageHovered, setMessageHovered] = useState(false);
+  const hoverContext = useContext(HoverContext)
+  // const {setMessageHovered} = hoverContext;
+  console.log(hoverContext)
 
   return (
     <main className="px-4 md:px-16 md:pt-20 flex flex-col justify-between h-full">

@@ -35,7 +35,6 @@ export default function Blog() {
 
   if (loading) return <Loader />;
   if (error) return error;
-  console.log(data);
   return (
     <div className="md:px-16 pt-12 md:pt-20 h-full flex flex-col justify-between">
       <article className="prose overflow-y-auto">

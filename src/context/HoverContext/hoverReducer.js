@@ -1,6 +1,6 @@
 import {HOVER_MESSAGE} from '../types'
-//eslint-disable-next-line
-export default (state, action) => {
+
+const hoverReducer = (state, action) => {
   switch(action.type) {
     case HOVER_MESSAGE: return {
       ...state,
@@ -10,3 +10,4 @@ export default (state, action) => {
     default: return state
   }
 }
+export default hoverReducer

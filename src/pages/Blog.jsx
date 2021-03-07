@@ -36,7 +36,7 @@ export default function Blog() {
   console.log(data)
   return (
     <main className="md:px-16 pt-12 md:pt-20 h-full">
-      <div className="section mt-4 px-4">
+      <section className=" mt-4 px-4 max-w-6xl mx-auto">
         <div className="">
           {data.allPosts.map((post) => (
             <div className="" key={post.id}>
@@ -48,7 +48,7 @@ export default function Blog() {
             </div>
           ))}
         </div>
-      </div>
+      </section>
     </main>
   );
 }

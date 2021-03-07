@@ -35,8 +35,8 @@ export default function Blog() {
   if (error) return error;
   console.log(data)
   return (
-    <main className="md:px-16 md:pt-20 h-full">
-      <div className="section mt-4">
+    <main className="md:px-16 pt-12 md:pt-20 h-full">
+      <div className="section mt-4 px-4">
         <div className="">
           {data.allPosts.map((post) => (
             <div className="" key={post.id}>

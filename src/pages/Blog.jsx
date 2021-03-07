@@ -43,7 +43,7 @@ export default function Blog() {
             <div className="" key={id}>
               {/* <h2 className="text-2xl mb-4 font-semibold">{heading}</h2> */}
               <figure className="mx-auto mt-4 mb-0">
-                <img src={coverImage.url} alt={coverImage.alt} className="mb-0" />
+                <img src={coverImage.url} alt={coverImage.alt} className="mb-0 max-h-96 object-cover w-full" />
                 <figcaption>{coverImage.title }</figcaption>
               </figure>
               <StructuredText data={content} />

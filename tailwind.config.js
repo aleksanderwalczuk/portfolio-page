@@ -33,6 +33,11 @@ module.exports = {
                 margin: '0'
               }
             },
+            figure: {
+              img: {
+                filter: 'grayscale(.5)'
+              }
+            },
             a: {
               color: '#3182ce',
               '&:hover': {

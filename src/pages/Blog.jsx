@@ -1,5 +1,6 @@
 import { useQuery } from "graphql-hooks";
 import { StructuredText } from "react-datocms";
+import Footer from "../components/Footer";
 import Loader from "../components/Loader";
 
 export default function Blog() {
@@ -33,22 +34,23 @@ export default function Blog() {
 
   if (loading) return <Loader />;
   if (error) return error;
-  console.log(data)
+  console.log(data);
   return (
-    <main className="md:px-16 pt-12 md:pt-20 h-full">
-      <section className=" mt-4 px-4 max-w-6xl mx-auto">
-        <div className="">
+    <div className="md:px-16 pt-12 md:pt-20 h-full flex flex-col justify-between">
+      <main className="">
+        <section className=" mt-4 px-4 max-w-6xl mx-auto">
           {data.allPosts.map((post) => (
             <div className="" key={post.id}>
               <h2 className="text-2xl mb-4 font-semibold">{post.heading}</h2>
               <div className="mx-auto my-4">
-                <img src={post.coverImage.url} alt={post.coverImage.alt}/>
+                <img src={post.coverImage.url} alt={post.coverImage.alt} />
               </div>
               <StructuredText data={post.content} />
             </div>
           ))}
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+      <Footer messageHovered={null} />
+    </div>
   );
 }

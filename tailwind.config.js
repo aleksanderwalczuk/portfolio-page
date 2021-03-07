@@ -3,6 +3,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   darkMode: false, // or 'media' or 'class'
+  important: true,
   theme: {
     colors: {
       current: '#111111',
@@ -18,6 +19,29 @@ module.exports = {
       }
     },
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: 'unset',
+            color: '#333',
+            p: {
+              marginBottom: '0',
+            },
+            li: {
+              margin: '0',
+              p: {
+                margin: '0'
+              }
+            },
+            a: {
+              color: '#3182ce',
+              '&:hover': {
+                color: '#2c5282',
+              },
+            },
+          },
+        },
+      },
       fontSize: {
         '5xl': ['3.5rem', {lineHeight: '1.143'}],
         '4xl': '2.75rem',
@@ -37,5 +61,7 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

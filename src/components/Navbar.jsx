@@ -9,7 +9,7 @@ import {
 export default function Navbar() {
   return (
     <header className="relative">
-      <div className="absolute top-0 left-0 w-full md:h-20 bg-gray md:px-16 flex items-center justify-between">
+      <div className="absolute top-0 left-0 w-full md:h-20 bg-gray px-4 md:px-16 flex items-center justify-between">
         <h1 className="text-xl p-2 pl-0">
           <Link to={ROUTE_ROOT}>aleksanderwalczuk</Link>
         </h1>
